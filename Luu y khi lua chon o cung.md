@@ -3,11 +3,14 @@ Bài viết sau tham khảo từ https://www.dreamhost.com/blog/2016/10/01/dream
 # 1. Hệ thống lưu trữ hiệu năng thấp
 DreamHost trình bày về kinh nghiệm của họ khi hệ thống lưu trữ thử nghiệm của họ nhận được các phản hồi về throuput thấp và latency cao, mặc dù lượng dữ liệu lưu trữ không lớn như dự tính ban đầu. Có thể liệt kê ra 3 nguyên nhân sau:
 
-## 1.1. Nguyên nhân đầu tiên: CPU và RAM, họ sử dụng cùng một cấu hình với DreamObject, nơi lưu trữ dung lượng lớn nhưng lượng truy xuất không nhiều. Tuy nhiên, ở hệ thống beta thì ngược lại, họ lưu trữ lượng dữ liệu nhỏ với mật độ truy xuất thường xuyên.
+## 1.1. Nguyên nhân đầu tiên: CPU và RAM
+Họ sử dụng cùng một cấu hình với DreamObject, nơi lưu trữ dung lượng lớn nhưng lượng truy xuất không nhiều. Tuy nhiên, ở hệ thống beta thì ngược lại, họ lưu trữ lượng dữ liệu nhỏ với mật độ truy xuất thường xuyên.
 
-## 1.2. Nguyên nhân thứ hai: mật độ lưu trữ, hiệu năng của Ceph sẽ tốt hơn khi sử dụng càng ít ổ đĩa trên 1 host. Tiến trình Recovery (khôi phục dữ liệu) cũng nhanh hơn khi sử dụng các ổ đĩa dung lượng nhỏ.
+## 1.2. Nguyên nhân thứ hai: mật độ lưu trữ
+Hiệu năng của Ceph sẽ tốt hơn khi sử dụng càng ít ổ đĩa trên 1 host. Tiến trình Recovery (khôi phục dữ liệu) cũng nhanh hơn khi sử dụng các ổ đĩa dung lượng nhỏ.
 
-## 1.3. Nguyên nhân thứ ba: SAS Expander. Họ sử dụng RAID Card với 4 kênh, tức có thể truy xuất 4 ổ đĩa một lúc, trong khi họ có 14 ổ đĩa (12 cho Ceph, 2 cho OS). Do đó, cần phải dùng một thiết bị là "SAS Expander", đứng giữa RAID Card và ổ đĩa. SAS Expander sử dụng chỉ hỗ trợ đủ bâng thông cho 2 lanes, do đó khi nhiều ổ đĩa hoạt động đồng thời, tốc độ sẽ bị giảm.
+## 1.3. Nguyên nhân thứ ba: SAS Expander. 
+Họ sử dụng RAID Card với 4 kênh, tức có thể truy xuất 4 ổ đĩa một lúc, trong khi họ có 14 ổ đĩa (12 cho Ceph, 2 cho OS). Do đó, cần phải dùng một thiết bị là "SAS Expander", đứng giữa RAID Card và ổ đĩa. SAS Expander sử dụng chỉ hỗ trợ đủ bâng thông cho 2 lanes, do đó khi nhiều ổ đĩa hoạt động đồng thời, tốc độ sẽ bị giảm.
 
 # 2. Kinh nghiệm lựa chọn SSD
 Từ những phản hồi của người dùng, DreamHost biết fast IO và low latency là rất quan trọng, do đó họ lựa chọn SSD làm ổ lưu trữ.
