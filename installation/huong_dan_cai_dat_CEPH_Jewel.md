@@ -99,9 +99,9 @@ hostname -F /etc/hostname
 cp /etc/hosts /etc/hosts.orig
 cat << EOF > /etc/hosts
 127.0.0.1       localhost ceph1
-10.10.10.61    	ceph1
-10.10.10.62  	ceph2
-10.10.10.63 	ceph3
+10.10.10.61     ceph1
+10.10.10.62     ceph2
+10.10.10.63     ceph3
 EOF
 ```
 
@@ -159,9 +159,9 @@ hostname -F /etc/hostname
 cp /etc/hosts /etc/hosts.orig
 cat << EOF > /etc/hosts
 127.0.0.1       localhost ceph2
-10.10.10.61    	ceph1
-10.10.10.62  	ceph2
-10.10.10.63 	ceph3
+10.10.10.61     ceph1
+10.10.10.62     ceph2
+10.10.10.63     ceph3
 EOF
 ```
 
@@ -170,10 +170,9 @@ EOF
 Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH3 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
-
-	```sh
-	cp /etc/network/interfaces /etc/network/interfaces.orgi
-	```
+```sh
+cp /etc/network/interfaces /etc/network/interfaces.orgi
+```
 
 - Khai báo các card mạng theo ip đã phân hoạch
 ```sh
@@ -216,9 +215,9 @@ hostname -F /etc/hostname
 cp /etc/hosts /etc/hosts.orig
 cat << EOF > /etc/hosts
 127.0.0.1       localhost ceph3
-10.10.10.61    	ceph1
-10.10.10.62  	ceph2
-10.10.10.63 	ceph3
+10.10.10.61     ceph1
+10.10.10.62     ceph2
+10.10.10.63     ceph3
 EOF
 ```
 
