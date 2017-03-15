@@ -40,7 +40,7 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 <a name="1.2"></a>
 ###  1.2 IP Planning
 
-![IP Planning](../images/ip-planning-for-ceph.png)
+![IP Planning](../images/ip-planning-for-ceph2.png)
 
 <a name="2"></a>
 ## 2 Thiết lập ip, hostname cho các máy chủ CEPH
