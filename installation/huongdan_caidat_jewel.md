@@ -47,7 +47,7 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 
 <a name="2.1"></a>
 ### 2.1 Thiết lập IP và hostname cho CEPH1
-- Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
+Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH1 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
 	```sh
@@ -102,7 +102,7 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 
 <a name="2.2"></a>
 ### 2.2. Thiết lập IP và hostname cho CEPH2
-- Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
+Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH2 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
 	```sh
@@ -157,7 +157,7 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 
 <a name="2.3"></a>
 ### 2.3. Thiết lập IP và hostname cho CEPH3
-- Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
+Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH3 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
 	```sh
