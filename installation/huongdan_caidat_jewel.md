@@ -176,33 +176,33 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 
 - Khai báo các card mạng theo ip đã phân hoạch
 
-	```sh
-	cat <<EOF> /etc/network/interfaces
+```sh
+cat <<EOF> /etc/network/interfaces
 
-	# The loopback network interface
-	auto lo
-	iface lo inet loopback
+# The loopback network interface
+auto lo
+iface lo inet loopback
 
-	# MGNT for CEPH
-	auto eth0
-	iface eth0 inet static
-	address 10.10.10.63
-	netmask 255.255.255.0 
+# MGNT for CEPH
+auto eth0
+iface eth0 inet static
+address 10.10.10.63
+netmask 255.255.255.0 
 
-	# INTERNET for CEPH
-	auto eth1
-	iface eth1 inet static
-	address 172.16.69.63
-	netmask 255.255.255.0
-	gateway 172.16.69.1
-	dns-nameservers 8.8.8
+# INTERNET for CEPH
+auto eth1
+iface eth1 inet static
+address 172.16.69.63
+netmask 255.255.255.0
+gateway 172.16.69.1
+dns-nameservers 8.8.8
 
-	# CEPH replicate 
-	auto eth2
-	iface eth2 inet static
-	address 10.10.30.63
-	netmask 255.255.255.0 
-	EOF
+# CEPH replicate 
+auto eth2
+iface eth2 inet static
+address 10.10.30.63
+netmask 255.255.255.0 
+EOF
 
 - Thiết lập hostname cho `CEPH1`
 
@@ -213,15 +213,15 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 
 - Cấu hình phân giải tên cho các node CEPH
 
-	```sh
-	cp /etc/hosts /etc/hosts.orig
-	cat << EOF > /etc/hosts
-	127.0.0.1       localhost ceph3
-	10.10.10.61    	ceph1
-	10.10.10.62  	ceph2
-	10.10.10.63 	ceph3
-	EOF
-	```
+```sh
+cp /etc/hosts /etc/hosts.orig
+cat << EOF > /etc/hosts
+127.0.0.1       localhost ceph3
+10.10.10.61    	ceph1
+10.10.10.62  	ceph2
+10.10.10.63 	ceph3
+EOF
+```
 
 ## 3. Cài đặt CEPH lên các máy chủ.
 - Các bước chính cài đặt CEPH 
