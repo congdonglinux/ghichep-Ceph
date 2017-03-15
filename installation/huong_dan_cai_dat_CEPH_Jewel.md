@@ -1,4 +1,4 @@
-# Hướng dẫn cài đặt CEPH JEWEL trên Ubuntu 14.04
+﻿# Hướng dẫn cài đặt CEPH JEWEL trên Ubuntu 14.04
 Mục lục:
 
 - [1. Các bước chuẩn bị](#1)
@@ -146,14 +146,14 @@ netmask 255.255.255.0
 EOF
 ```
 
-- Thiết lập hostname cho `CEPH1`
+- Thiết lập hostname cho `CEPH2`
 
 ```sh
 echo "ceph2" > /etc/hostname
 hostname -F /etc/hostname
 ```
 
-- Cấu hình phân giải tên cho các node CEPH
+- Cấu hình phân giải tên của các máy chủ
 
 ```sh
 cp /etc/hosts /etc/hosts.orig
@@ -205,7 +205,7 @@ netmask 255.255.255.0
 EOF
 ```
 
-- Thiết lập hostname cho `CEPH1`
+- Thiết lập hostname cho `CEPH3`
 ```sh
 echo "ceph3" > /etc/hostname
 hostname -F /etc/hostname
