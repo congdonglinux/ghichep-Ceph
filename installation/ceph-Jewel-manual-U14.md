@@ -18,7 +18,7 @@ Mục lục:
 - Server chạy Ubuntu 14.04
 - Máy có 2 card mạng
 - HDD1: Cài OS
-- HDD2 - HDD5: Sử dụng làm OSD
+- HDD2 đến HDD5: Sử dụng làm OSD
 
 Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Object đc replicate đúng. Có thể cấu hình 1 node, dùng bình thường nhưng check ceph status sẽ báo pgs degrate.
 
