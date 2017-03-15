@@ -3,7 +3,7 @@ Mục lục:
 
 - [1. Các bước chuẩn bị](#1)
   - [1.1. Mô hình LAB](#1.1)
-  - [1.2. IP Planning](#1.2)
+  - [1.2. Phân hoạch IP và phần cứng yêu cầu đối với mô hình LABs](#1.2)
 - [2. Thiết lập ip, hostname cho các máy chủ CEPH](#2)
   - [2.1. Thiết lập ip, hostname cho các máy chủ CEPH](#2.1)
   - [2.2. Thiết lập ip, hostname cho các máy chủ CEPH](#2.2)
@@ -38,7 +38,7 @@ Mục lục:
 Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Object đc replicate đúng. Có thể cấu hình 1 node, dùng bình thường nhưng check ceph status sẽ báo pgs degrate.
 
 <a name="1.2"></a>
-###  1.2 IP Planning
+###  1.2 Phân hoạch IP và phần cứng yêu cầu đối với mô hình LABs
 
 ![IP Planning](../images/ip-planning-for-ceph2.png)
 
