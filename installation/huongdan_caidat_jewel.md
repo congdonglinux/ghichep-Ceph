@@ -50,11 +50,13 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH1 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
+
 	```sh
 	cp /etc/network/interfaces /etc/network/interfaces.orgi
 	```
 
 - Khai báo các card mạng theo ip đã phân hoạch
+
 	```sh
 	cat <<EOF> /etc/network/interfaces
 
@@ -85,12 +87,14 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 	```
 
 - Thiết lập hostname cho `CEPH1`
+
 	```sh
 	echo "ceph1" > /etc/hostname
 	hostname -F /etc/hostname
 	```
 
 - Cấu hình phân giải tên cho các node CEPH trên host1
+
 	```sh
 	cp /etc/hosts /etc/hosts.orig
 	cat << EOF > /etc/hosts
@@ -106,11 +110,13 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH2 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
+
 	```sh
 	cp /etc/network/interfaces /etc/network/interfaces.orgi
 	```
 
 - Khai báo các card mạng theo ip đã phân hoạch
+
 	```sh
 	cat <<EOF> /etc/network/interfaces
 
@@ -140,12 +146,14 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 	EOF
 
 - Thiết lập hostname cho `CEPH1`
+
 	```sh
 	echo "ceph2" > /etc/hostname
 	hostname -F /etc/hostname
 	```
 
 - Cấu hình phân giải tên cho các node CEPH
+
 	```sh
 	cp /etc/hosts /etc/hosts.orig
 	cat << EOF > /etc/hosts
@@ -161,11 +169,13 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các node cho CEPH3 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
+
 	```sh
 	cp /etc/network/interfaces /etc/network/interfaces.orgi
 	```
 
 - Khai báo các card mạng theo ip đã phân hoạch
+
 	```sh
 	cat <<EOF> /etc/network/interfaces
 
@@ -195,12 +205,14 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 	EOF
 
 - Thiết lập hostname cho `CEPH1`
+
 	```sh
 	echo "ceph3" > /etc/hostname
 	hostname -F /etc/hostname
 	```
 
 - Cấu hình phân giải tên cho các node CEPH
+
 	```sh
 	cp /etc/hosts /etc/hosts.orig
 	cat << EOF > /etc/hosts
