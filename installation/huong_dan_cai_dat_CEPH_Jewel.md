@@ -76,7 +76,7 @@ iface eth1 inet static
 address 172.16.69.61
 netmask 255.255.255.0
 gateway 172.16.69.1
-dns-nameservers 8.8.8
+dns-nameservers 8.8.8.8
 
 # CEPH replicate 
 auto eth2
@@ -136,7 +136,7 @@ iface eth1 inet static
 address 172.16.69.62
 netmask 255.255.255.0
 gateway 172.16.69.1
-dns-nameservers 8.8.8
+dns-nameservers 8.8.8.8
 
 # CEPH replicate 
 auto eth2
@@ -195,7 +195,7 @@ iface eth1 inet static
 address 172.16.69.63
 netmask 255.255.255.0
 gateway 172.16.69.1
-dns-nameservers 8.8.8
+dns-nameservers 8.8.8.8
 
 # CEPH replicate 
 auto eth2
