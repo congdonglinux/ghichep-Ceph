@@ -3,11 +3,6 @@ Mục lục:
 
 [1. Mô hình Lab](#1)
 
-[2. Cấu hình Node-I (Mon+Osd+Mds)](#2)
-
-[3. Cấu hình Note-II (Osd)](#3)
-
-[4. Cấu hình Node-III (Mon+Osd)](#4)
 ========================
 
 <a name="1"></a>
@@ -46,6 +41,108 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 #### Thiết lập IP và hostname cho CEPH1
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
-- Đăt IP cho CEPH1
+- Sao lưu cấu hình IP trước khi thay đổi
+	```sh
+	cp /etc/network/interfaces /etc/network/interfaces.orgi
+	```
 
-```sh
+- Khai báo các card mạng theo ip đã phân hoạch
+	```sh
+	cat <<EOF> /etc/network/interfaces
+
+	# The loopback network interface
+	auto lo
+	iface lo inet loopback
+
+	# MGNT for CEPH
+	auto eth0
+	iface eth0 inet static
+	address 10.10.10.61
+	netmask 255.255.255.0 
+
+	# INTERNET for CEPH
+	auto eth1
+	iface eth1 inet static
+	address 172.16.69.61
+	netmask 255.255.255.0
+	gateway 172.16.69.1
+	dns-nameservers 8.8.8
+
+	# CEPH replicate 
+	auto eth2
+	iface eth2 inet static
+	address 10.10.30.61
+	netmask 255.255.255.0 
+	EOF
+
+- Thiết lập hostname cho `CEPH1`
+	```sh
+	echo "ceph1" > /etc/hostname
+	hostname -F /etc/hostname
+	```
+
+- Cấu hình phân giải tên cho các node CEPH trên host1
+	```sh
+	cp /etc/hosts /etc/hosts.orig
+	cat << EOF > /etc/hosts
+	127.0.0.1       localhost ceph1
+	10.10.10.61    	ceph1
+	10.10.10.62  	ceph2
+	10.10.10.63 	ceph3
+	EOF
+	```
+
+
+#### Thiết lập IP và hostname cho CEPH2
+- Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
+
+- Sao lưu cấu hình IP trước khi thay đổi
+	```sh
+	cp /etc/network/interfaces /etc/network/interfaces.orgi
+	```
+
+- Khai báo các card mạng theo ip đã phân hoạch
+	```sh
+	cat <<EOF> /etc/network/interfaces
+
+	# The loopback network interface
+	auto lo
+	iface lo inet loopback
+
+	# MGNT for CEPH
+	auto eth0
+	iface eth0 inet static
+	address 10.10.10.62
+	netmask 255.255.255.0 
+
+	# INTERNET for CEPH
+	auto eth1
+	iface eth1 inet static
+	address 172.16.69.62
+	netmask 255.255.255.0
+	gateway 172.16.69.1
+	dns-nameservers 8.8.8
+
+	# CEPH replicate 
+	auto eth2
+	iface eth2 inet static
+	address 10.10.30.62
+	netmask 255.255.255.0 
+	EOF
+
+- Thiết lập hostname cho `CEPH1`
+	```sh
+	echo "ceph2" > /etc/hostname
+	hostname -F /etc/hostname
+	```
+
+- Cấu hình phân giải tên cho các node CEPH
+	```sh
+	cp /etc/hosts /etc/hosts.orig
+	cat << EOF > /etc/hosts
+	127.0.0.1       localhost ceph2
+	10.10.10.61    	ceph1
+	10.10.10.62  	ceph2
+	10.10.10.63 	ceph3
+	EOF
+	```
