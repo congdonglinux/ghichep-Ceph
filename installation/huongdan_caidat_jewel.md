@@ -1,13 +1,22 @@
 # Hướng dẫn cài đặt CEPH JEWEL trên Ubuntu 14.04
 Mục lục:
 
-[I. Mô hình Lab](#1)
+[1. Các bước chuẩn bị](#1)
+[1.1. Mô hình LAB](#1.1)
+[1.2. IP Planning](#1.2)
+
+[2. Thiết lập ip, hostname cho các máy chủ CEPH](#2)
+[2.1. Thiết lập ip, hostname cho các máy chủ CEPH](#2.1)
+[2.2. Thiết lập ip, hostname cho các máy chủ CEPH](#2.2)
+[2.3. Thiết lập ip, hostname cho các máy chủ CEPH](#2.3)
 
 ========================
 
 <a name="1"></a>
-## 1. Các bước chuẩn bị
-### 1.1. Mô hình
+## 1 Các bước chuẩn bị
+
+<a name="1.1"></a>
+### 1.1 Mô hình LAB
 
 ![CEPH JEWEL](../images/mohinh-ceph-jewel.png)
 
@@ -29,11 +38,15 @@ Mục lục:
 
 Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Object đc replicate đúng. Có thể cấu hình 1 node, dùng bình thường nhưng check ceph status sẽ báo pgs degrate.
 
-###  1.2. IP Planning
+<a name="1.2"></a>
+###  1.2 IP Planning
 
 ![IP Planning](../images/ip-planning-for-ceph.png)
 
-## 2. Thiết lập ip, hostname cho các máy chủ CEPH
+<a name="2"></a>
+## 2 Thiết lập ip, hostname cho các máy chủ CEPH
+
+<a name="2.1"></a>
 ### 2.1 Thiết lập IP và hostname cho CEPH1
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
@@ -88,8 +101,8 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 	EOF
 	```
 
-
-### 2.2 Thiết lập IP và hostname cho CEPH2
+<a name="2.2"></a>
+### 2.2. Thiết lập IP và hostname cho CEPH2
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
@@ -143,7 +156,7 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 	EOF
 	```
 
-
+<a name="2.3"></a>
 ### 2.3. Thiết lập IP và hostname cho CEPH3
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
@@ -201,11 +214,11 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 ## 3. Cài đặt CEPH lên các máy chủ.
 - Các bước chính cài đặt CEPH 
 
-### 3.1 Cài đặt CEPH trên node `ceph1`
+### 3.1. Cài đặt CEPH trên node `ceph1`
 - Các thành phần được cài trên CEPH1
 
-### 3.2 Cài đặt CEPH trên node `ceph2`
+### 3.2. Cài đặt CEPH trên node `ceph2`
 - Các thành phần được cài trên CEPH2
 
-### 3.3 Cài đặt CEPH trên node `ceph3`
+### 3.3. Cài đặt CEPH trên node `ceph3`
 - Các thành phần được cài trên CEPH3
