@@ -82,6 +82,7 @@ Các bước này sẽ cấu hình IP và hostname, phân giải tên cho các n
 	address 10.10.30.61
 	netmask 255.255.255.0 
 	EOF
+	```
 
 - Thiết lập hostname cho `CEPH1`
 	```sh
