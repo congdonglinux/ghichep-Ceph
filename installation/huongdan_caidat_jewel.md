@@ -1,14 +1,13 @@
 # Hướng dẫn cài đặt CEPH JEWEL trên Ubuntu 14.04
 Mục lục:
 
-[1. Các bước chuẩn bị](#1)
-[1.1. Mô hình LAB](#1.1)
-[1.2. IP Planning](#1.2)
-
-[2. Thiết lập ip, hostname cho các máy chủ CEPH](#2)
-[2.1. Thiết lập ip, hostname cho các máy chủ CEPH](#2.1)
-[2.2. Thiết lập ip, hostname cho các máy chủ CEPH](#2.2)
-[2.3. Thiết lập ip, hostname cho các máy chủ CEPH](#2.3)
+- [1. Các bước chuẩn bị](#1)
+  - [1.1. Mô hình LAB](#1.1)
+  - [1.2. IP Planning](#1.2)
+- [2. Thiết lập ip, hostname cho các máy chủ CEPH](#2)
+  - [2.1. Thiết lập ip, hostname cho các máy chủ CEPH](#2.1)
+  - [2.2. Thiết lập ip, hostname cho các máy chủ CEPH](#2.2)
+  - [2.3. Thiết lập ip, hostname cho các máy chủ CEPH](#2.3)
 
 ========================
 
