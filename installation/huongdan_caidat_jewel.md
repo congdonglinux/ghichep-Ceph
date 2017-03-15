@@ -46,3 +46,6 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 #### Thiết lập IP và hostname cho CEPH1
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
+- Đăt IP cho CEPH1
+
+```sh

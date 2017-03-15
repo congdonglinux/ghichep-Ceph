@@ -3,15 +3,15 @@ Mục lục:
 
 [1. Mô hình Lab](#1)
 
-[2. Cấu hình Node-I (Mon+Osd+Mds)](#2)
+[2. Cấu hình CEPH1 (Mon+Osd+Mds)](#2)
 
-[3. Cấu hình Note-II (Osd)](#3)
+[3. Cấu hình CEPH2 (Osd))](#3)
 
-[4. Cấu hình Node-III (Mon+Osd)](#4)
+[4. Cấu hình CEPH3 (Mon+Osd)](#4)
 ========================
 
 <a name="1"></a>
-###1. Mô hình Lab
+### 1. Mô hình Lab
 
 <img src=http://i.imgur.com/aEGR37o.png>
 
@@ -50,7 +50,7 @@ Kiểm tra gói cài đặt
 `dpkg -l |egrep -i "ceph|rados|rdb"`
 
 <a name="2"></a>
-###2. Thiết lập Node-I (Mon+Osd+Mds)
+### 2. Thiết lập CEPH-1 (Mon+Osd+Mds)
 
 **B-1. Tạo fSID cho Ceph cluster**
 
@@ -189,7 +189,7 @@ Khởi động lại ceph
 
 
 <a name="3"></a>
-###3. Cấu hình Note-II (Osd)
+### 3. Cấu hình CEPH2 (Osd)
 
 **B-1. Copy từ Note-I sang Node-II**
 
@@ -221,7 +221,7 @@ root@Ceph-1:/etc/ceph# scp /var/lib/ceph/bootstrap-osd/ceph.keyring root@Ceph-2:
 <img src=http://i.imgur.com/IciLdGp.png>
 
 <a name="4"></a>
-###4. Cấu hình Node-III (Mon+Osd)
+### 4. Cấu hình CEPH3 (Mon+Osd)
 
 **B-1. Copy từ Note-I sang Node-III***
 ```sh
