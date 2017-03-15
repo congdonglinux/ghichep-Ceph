@@ -35,10 +35,8 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 ![IP Planning](../images/ip-planning-for-ceph.png)
 
 
-## Thiết lập ban đầu cho các máy chủ CEPH
-
-### Thiết lập IP và hostname
-#### Thiết lập IP và hostname cho CEPH1
+## 1. Thiết lập ip, hostname cho các máy chủ CEPH
+### 1.1 Thiết lập IP và hostname cho CEPH1
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
@@ -93,7 +91,7 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 	```
 
 
-#### Thiết lập IP và hostname cho CEPH2
+### 1.2 Thiết lập IP và hostname cho CEPH2
 - Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
 
 - Sao lưu cấu hình IP trước khi thay đổi
@@ -146,3 +144,70 @@ Chú ý: Số Node (Mon+Osd) nên cấu hình là 3 node để số lượng Obj
 	10.10.10.63 	ceph3
 	EOF
 	```
+
+
+### 1.3. Thiết lập IP và hostname cho CEPH3
+- Cấu hình IP và hostname cho CEPH1 đúng như mô hình trên
+
+- Sao lưu cấu hình IP trước khi thay đổi
+	```sh
+	cp /etc/network/interfaces /etc/network/interfaces.orgi
+	```
+
+- Khai báo các card mạng theo ip đã phân hoạch
+	```sh
+	cat <<EOF> /etc/network/interfaces
+
+	# The loopback network interface
+	auto lo
+	iface lo inet loopback
+
+	# MGNT for CEPH
+	auto eth0
+	iface eth0 inet static
+	address 10.10.10.63
+	netmask 255.255.255.0 
+
+	# INTERNET for CEPH
+	auto eth1
+	iface eth1 inet static
+	address 172.16.69.63
+	netmask 255.255.255.0
+	gateway 172.16.69.1
+	dns-nameservers 8.8.8
+
+	# CEPH replicate 
+	auto eth2
+	iface eth2 inet static
+	address 10.10.30.63
+	netmask 255.255.255.0 
+	EOF
+
+- Thiết lập hostname cho `CEPH1`
+	```sh
+	echo "ceph3" > /etc/hostname
+	hostname -F /etc/hostname
+	```
+
+- Cấu hình phân giải tên cho các node CEPH
+	```sh
+	cp /etc/hosts /etc/hosts.orig
+	cat << EOF > /etc/hosts
+	127.0.0.1       localhost ceph3
+	10.10.10.61    	ceph1
+	10.10.10.62  	ceph2
+	10.10.10.63 	ceph3
+	EOF
+	```
+
+## 2. Cài đặt CEPH lên các máy chủ.
+- Các bước chính cài đặt CEPH 
+
+### 2.1 Cài đặt CEPH trên node `ceph1`
+- Các thành phần được cài trên CEPH1
+
+### 2.2 Cài đặt CEPH trên node `ceph2`
+- Các thành phần được cài trên CEPH2
+
+### 2.3 Cài đặt CEPH trên node `ceph3`
+- Các thành phần được cài trên CEPH3
